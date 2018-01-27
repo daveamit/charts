@@ -38,6 +38,7 @@ mkdir -p ${STABLE_REPO_DIR}
 cd ${STABLE_REPO_DIR}
   helm repo index --url ${STABLE_REPO_URL} .
   for dir in `ls ../stable`;do
+    helm dep update ../stable/$dir
     helm dep build ../stable/$dir
     helm package ../stable/$dir
   done
@@ -53,6 +54,7 @@ cd ${INCUBATOR_REPO_DIR}
   # gsutil cp gs://kubernetes-charts-incubator/index.yaml .
   helm repo index --url ${INCUBATOR_REPO_URL} .
   for dir in `ls ../incubator`;do
+    help dep update ../incubator/$dir
     helm dep build ../incubator/$dir
     helm package ../incubator/$dir
   done
