@@ -54,7 +54,7 @@ cd ${INCUBATOR_REPO_DIR}
   # gsutil cp gs://kubernetes-charts-incubator/index.yaml .
   helm repo index --url ${INCUBATOR_REPO_URL} .
   for dir in `ls ../incubator`;do
-    help dep update ../incubator/$dir
+    helm dep update ../incubator/$dir
     helm dep build ../incubator/$dir
     helm package ../incubator/$dir
   done
