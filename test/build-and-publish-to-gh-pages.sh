@@ -24,6 +24,7 @@ INCUBATOR_REPO_URL=https://daveamit.github.io/charts/incubator/
 # helm init --client-only
 # helm repo add stable ${STABLE_REPO_URL}
 # helm repo add incubator ${INCUBATOR_REPO_URL}
+helm repo add incubator https://kubernetes-charts-incubator.storage.googleapis.com/
 
 # Authenticate before uploading to Google Cloud Storage
 # cat > sa.json <<EOF
