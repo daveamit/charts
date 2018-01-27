@@ -23,3 +23,6 @@ jobs:
        - run:
            name: lint
            command: test/circle/lint.sh
+       - run:
+           name: build and publish charts to gh-pages
+           command: test/build-and-publish-to-gh-pages.sh

@@ -71,5 +71,10 @@ rm -rf incubator
 mv /tmp/${STABLE_REPO_DIR} ./stable
 mv /tmp/${INCUBATOR_REPO_DIR} ./incubator
 
+git config --global user.email "$GH_EMAIL" > /dev/null 2>&1
+git config --global user.name "$GH_NAME" > /dev/null 2>&1
 
+git add .
+git commit -am 'Updating charts via ci'
+git push
 
